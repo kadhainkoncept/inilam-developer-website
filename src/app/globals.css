@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --inilam-white: #FFFFFF;
+    --inilam-charcoal: #19191B;
+    --inilam-gold: #FFAC0A;
+
+    --font-display: var(--font-dm-sans), "DM Sans", sans-serif;
+    --font-body: var(--font-inter), "Inter", sans-serif;
+  }
+}
+
+@theme {
+  --color-inilam-white: #FFFFFF;
+  --color-inilam-charcoal: #19191B;
+  --color-inilam-gold: #FFAC0A;
+
+  --font-display: var(--font-dm-sans), "DM Sans", sans-serif;
+  --font-body: var(--font-inter), "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--inilam-white);
+  color: var(--inilam-charcoal);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F9F9FB;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--inilam-gold);
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
